@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dessert_names">
+        <item>Dirección / Address</item>
+        <item>Provincia / Province</item>
+        <item>Codigo Postal / Postal Code</item>
+        <item>Municipio / Municipality</item>
+        <item>Información / Info</item>
+    </string-array>
+</resources>

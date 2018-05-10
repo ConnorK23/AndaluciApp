@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "218417906967",
+    "firebase_url": "https://andaluciapp-62fc6.firebaseio.com",
+    "project_id": "andaluciapp-62fc6",
+    "storage_bucket": "andaluciapp-62fc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218417906967:android:6a6752927b3f10f2",
+        "android_client_info": {
+          "package_name": "es.vcarmen.andaluciapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218417906967-bqs7fni8r7q4hhap63jv0g41sepasu4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "es.vcarmen.andaluciapp",
+            "certificate_hash": "ec86adc407acc748f3a6f4105642bd3835d56e80"
+          }
+        },
+        {
+          "client_id": "218417906967-6do7nupphvkfg2eda9l8gnsocr6rtbt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7CAky47fO8AilQMIcSHr786sbo3DUAwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218417906967-6do7nupphvkfg2eda9l8gnsocr6rtbt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

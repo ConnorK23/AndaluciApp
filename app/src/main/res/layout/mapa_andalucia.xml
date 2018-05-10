@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/andalucia" />
+
+    <TextView
+        android:id="@+id/jaen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/huelva"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="218dp"
+        android:text="Jaén" />
+
+    <TextView
+        android:id="@+id/granada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/jaen"
+        android:layout_below="@+id/sevilla"
+        android:layout_marginTop="7dp"
+        android:text="Granada" />
+
+    <TextView
+        android:id="@+id/cordoba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/jaen"
+        android:layout_alignBottom="@+id/jaen"
+        android:layout_marginEnd="50dp"
+        android:layout_toStartOf="@+id/granada"
+        android:text="Córdoba" />
+
+    <TextView
+        android:id="@+id/sevilla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="6dp"
+        android:layout_toStartOf="@+id/cordoba"
+        android:text="Sevilla" />
+
+    <TextView
+        android:id="@+id/huelva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sevilla"
+        android:layout_marginEnd="46dp"
+        android:layout_toStartOf="@+id/cadiz"
+        android:text="Huelva" />
+
+    <TextView
+        android:id="@+id/cadiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sevilla"
+        android:layout_below="@+id/malaga"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="17dp"
+        android:text="Cádiz" />
+
+    <TextView
+        android:id="@+id/malaga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/granada"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/sevilla"
+        android:text="Málaga" />
+
+    <TextView
+        android:id="@+id/almeria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sevilla"
+        android:layout_marginStart="47dp"
+        android:layout_toEndOf="@+id/granada"
+        android:text="Almería" />
+
+</RelativeLayout>
