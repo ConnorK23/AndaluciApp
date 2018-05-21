@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,15 +25,23 @@ import java.util.ArrayList;
 
 public class ListAllMonuments extends AppCompatActivity {
     ArrayList<Monumento> listMonuments = new ArrayList<>();
+
     Monumento monumento;
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
+    Bundle bundle;
+    ImageView addBag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_all_monuments);
+
+        bundle = getIntent().getExtras();
+        String provincia = bundle.getString("Provincia");
+
+        addBag = (ImageView) findViewById(R.id.addToBag);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference("");
@@ -43,56 +52,110 @@ public class ListAllMonuments extends AppCompatActivity {
         lManager = new LinearLayoutManager(this);
         recycler.setLayoutManager(lManager);
 
-        ref.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                monumento = dataSnapshot.getValue(Monumento.class);
-                listMonuments.add(monumento);
-                System.out.println(listMonuments.toString());
-                adapter = new Adaptador(listMonuments, getApplicationContext());
-                recycler.setAdapter(adapter);
+        if (provincia == null) {
+            ref.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    monumento = dataSnapshot.getValue(Monumento.class);
+                    listMonuments.add(monumento);
+                    System.out.println(listMonuments.toString());
+                    adapter = new Adaptador(listMonuments, getApplicationContext());
+                    recycler.setAdapter(adapter);
 
-                recycler.addOnItemTouchListener(
-                        new RecyclerItemTouch(getApplicationContext(), recycler ,new RecyclerItemTouch.OnItemClickListener() {
+                    recycler.addOnItemTouchListener(
+                            new RecyclerItemTouch(getApplicationContext(), recycler ,new RecyclerItemTouch.OnItemClickListener() {
 
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Monumento monumento2 = (Monumento) listMonuments.get(position);
-                                Intent i = new Intent(getApplicationContext(), InfoMonumento.class);
-                                i.putExtra("header", monumento2.getImageUrlMax());
-                                i.putExtra("title", monumento2.getName());
-                                i.putExtra("lat", String.valueOf(monumento2.getLat()));
-                                i.putExtra("lng", String.valueOf(monumento2.getLng()));
-                                startActivity(i);
-                            }
+                                @Override
+                                public void onItemClick(View view, final int position) {
+                                    Monumento monumento2 = (Monumento) listMonuments.get(position);
+                                    Intent i = new Intent(getApplicationContext(), InfoMonumento.class);
+                                    i.putExtra("header", monumento2.getImageUrlMax());
+                                    i.putExtra("title", monumento2.getName());
+                                    i.putExtra("lat", String.valueOf(monumento2.getLat()));
+                                    i.putExtra("lng", String.valueOf(monumento2.getLng()));
+                                    startActivity(i);
+                                }
 
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                // do whatever
-                            }
-                        })
-                );
-            }
+                                @Override
+                                public void onLongItemClick(View view, int position) {
+                                    // do whatever
+                                }
+                            })
+                    );
+                }
 
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-            }
+                }
 
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-            }
+                }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        } else {
+            ref.orderByChild("province").equalTo(provincia).addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    monumento = dataSnapshot.getValue(Monumento.class);
+                    listMonuments.add(monumento);
+                    System.out.println(listMonuments.toString());
+                    adapter = new Adaptador(listMonuments, getApplicationContext());
+                    recycler.setAdapter(adapter);
+
+                    recycler.addOnItemTouchListener(
+                            new RecyclerItemTouch(getApplicationContext(), recycler ,new RecyclerItemTouch.OnItemClickListener() {
+
+                                @Override
+                                public void onItemClick(View view, int position) {
+                                    Monumento monumento2 = (Monumento) listMonuments.get(position);
+                                    Intent i = new Intent(getApplicationContext(), InfoMonumento.class);
+                                    i.putExtra("header", monumento2.getImageUrlMax());
+                                    i.putExtra("title", monumento2.getName());
+                                    i.putExtra("lat", String.valueOf(monumento2.getLat()));
+                                    i.putExtra("lng", String.valueOf(monumento2.getLng()));
+                                    startActivity(i);
+                                }
+
+                                @Override
+                                public void onLongItemClick(View view, int position) {
+                                    // do whatever
+                                }
+                            })
+                    );
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 }

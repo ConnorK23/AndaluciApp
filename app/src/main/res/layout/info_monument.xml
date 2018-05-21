@@ -48,7 +48,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <ScrollView
         android:id="@+id/scrollableview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,14 +56,26 @@
         android:paddingBottom="24dp"
         android:paddingTop="24dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listItem="@layout/item_dessert" />
+        tools:listItem="@layout/item_dessert"
+        />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        map:layout_anchor="@+id/scrollableview"
+        map:layout_anchorGravity="bottom|center"
+        tools:context="es.vcarmen.andaluciapp.Mapa" />
 
     <Button
-        android:id="@+id/botonMapa"
+        android:id="@+id/botonAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_anchor="@+id/scrollableview"
-        android:text="Ver ubicación en el mapa"
+        android:text="Añadir a la ruta"
+        app:layout_anchor="@+id/map"
         app:layout_anchorGravity="bottom|center" />
 
 </android.support.design.widget.CoordinatorLayout>

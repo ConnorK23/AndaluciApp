@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="es.vcarmen.andaluciapp.MainActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="675px"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+    </android.support.v4.view.ViewPager>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/andalucia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/icon_andalucia" />
+
+            <ImageView
+                android:id="@+id/almeria"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/andalucia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
+                android:src="@mipmap/icon_almeria"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="155dp" />
+
+            <ImageView
+                android:id="@+id/cadiz"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignTop="@+id/almeria"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/icon_cadiz" />
+
+            <ImageView
+                android:id="@+id/cordoba"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/cadiz"
+                android:layout_marginEnd="14dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@mipmap/icon_cordoba" />
+
+            <ImageView
+                android:id="@+id/granada"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/cadiz"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="18dp"
+                android:src="@mipmap/icon_granada" />
+
+            <ImageView
+                android:id="@+id/huelva"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_above="@+id/malaga"
+                android:layout_alignStart="@+id/almeria"
+                android:src="@mipmap/icon_huelva" />
+
+            <ImageView
+                android:id="@+id/jaen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignStart="@+id/cordoba"
+                android:layout_alignTop="@+id/granada"
+                android:src="@mipmap/icon_jaen" />
+
+            <ImageView
+                android:id="@+id/malaga"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignStart="@+id/huelva"
+                android:layout_below="@+id/granada"
+                android:layout_marginTop="16dp"
+                android:src="@mipmap/icon_malaga" />
+
+            <ImageView
+                android:id="@+id/sevilla"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/jaen"
+                android:src="@mipmap/icon_sevilla" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
+
+
