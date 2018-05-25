@@ -23,7 +23,7 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
-    ImageView andalucia, granada, jaen;
+    ImageView andalucia, granada, jaen, almeria, cadiz, cordoba, huelva, malaga, sevilla, ruta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         andalucia = (ImageView) findViewById(R.id.andalucia);
         granada = (ImageView) findViewById(R.id.granada);
         jaen = (ImageView) findViewById(R.id.jaen);
+        almeria = (ImageView) findViewById(R.id.almeria);
+        cadiz = (ImageView) findViewById(R.id.cadiz);
+        cordoba = (ImageView) findViewById(R.id.cordoba);
+        huelva = (ImageView) findViewById(R.id.huelva);
+        malaga = (ImageView) findViewById(R.id.malaga);
+        sevilla = (ImageView) findViewById(R.id.sevilla);
+        ruta = (ImageView) findViewById(R.id.ruta);
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
@@ -61,6 +68,69 @@ public class MainActivity extends AppCompatActivity {
         });
 
         jaen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Jaén");
+                startActivity(intent);
+            }
+        });
+
+        almeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Almería");
+                startActivity(intent);
+            }
+        });
+
+        cadiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Cádiz");
+                startActivity(intent);
+            }
+        });
+
+        cordoba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Córdoba");
+                startActivity(intent);
+            }
+        });
+
+        huelva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Huelva");
+                startActivity(intent);
+            }
+        });
+
+        malaga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Málaga");
+                startActivity(intent);
+            }
+        });
+
+        sevilla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListAllMonuments.class);
+                intent.putExtra("Provincia", "Sevilla");
+                startActivity(intent);
+            }
+        });
+
+        ruta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ListaRuta.class);

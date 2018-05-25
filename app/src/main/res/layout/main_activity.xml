@@ -107,6 +107,14 @@
                 android:layout_alignStart="@+id/jaen"
                 android:src="@mipmap/icon_sevilla" />
 
+            <ImageView
+                android:id="@+id/ruta"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/granada"
+                android:src="@mipmap/ruta" />
+
         </RelativeLayout>
     </ScrollView>
 

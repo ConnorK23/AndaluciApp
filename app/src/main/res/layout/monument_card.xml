@@ -56,13 +56,12 @@
         </View>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/addToBag"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:src="@android:drawable/ic_menu_add"
-            android:background="@color/material_blue_grey_800" />
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/logotipo" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

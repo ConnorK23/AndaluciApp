@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class AdaptadorRuta extends ArrayAdapter<MonumentoRuta> {
@@ -32,10 +34,10 @@ public class AdaptadorRuta extends ArrayAdapter<MonumentoRuta> {
         }
 
         TextView textViewNombre = (TextView) convertView.findViewById(R.id.texto_empresas);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.imagen_empresas);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imagen);
 
         textViewNombre.setText(monumentoRuta.getName());
-        imageView.setImageResource(R.drawable.icon3);
+        Picasso.with(convertView.getContext()).load(String.valueOf(monumentoRuta.getImageUrlMin())).into(imageView);
 
         return convertView;
     }

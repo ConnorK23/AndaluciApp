@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 public class ListAllMonuments extends AppCompatActivity {
     ArrayList<Monumento> listMonuments = new ArrayList<>();
-
     Monumento monumento;
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
@@ -71,6 +70,11 @@ public class ListAllMonuments extends AppCompatActivity {
                                     Intent i = new Intent(getApplicationContext(), InfoMonumento.class);
                                     i.putExtra("header", monumento2.getImageUrlMax());
                                     i.putExtra("title", monumento2.getName());
+                                    i.putExtra("direccion", monumento2.getAddress());
+                                    i.putExtra("municipio", monumento2.getMunicipality());
+                                    i.putExtra("provincia", monumento2.getProvince());
+                                    i.putExtra("cpostal", monumento2.getPostalcode());
+                                    i.putExtra("info", monumento2.getInfo());
                                     i.putExtra("lat", String.valueOf(monumento2.getLat()));
                                     i.putExtra("lng", String.valueOf(monumento2.getLng()));
                                     startActivity(i);
@@ -123,6 +127,11 @@ public class ListAllMonuments extends AppCompatActivity {
                                     Intent i = new Intent(getApplicationContext(), InfoMonumento.class);
                                     i.putExtra("header", monumento2.getImageUrlMax());
                                     i.putExtra("title", monumento2.getName());
+                                    i.putExtra("direccion", monumento2.getAddress());
+                                    i.putExtra("municipio", monumento2.getMunicipality());
+                                    i.putExtra("provincia", monumento2.getProvince());
+                                    i.putExtra("cpostal", monumento2.getPostalcode());
+                                    i.putExtra("info", monumento2.getInfo());
                                     i.putExtra("lat", String.valueOf(monumento2.getLat()));
                                     i.putExtra("lng", String.valueOf(monumento2.getLng()));
                                     startActivity(i);
